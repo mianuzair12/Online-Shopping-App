@@ -40,4 +40,47 @@ body {
     animation: shine 0.85s;
 } */
 
+/* products.component.css */
+
+.product-card {
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  overflow: hidden;
+}
+
+/* constrain image area so cards are uniform */
+.img-wrap {
+  width: 100%;
+  height: 18rem; /* adjust height as you like */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fafafa;
+}
+
+/* ensure image covers area without stretching */
+.product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* important: crop to fill */
+  display: block;
+  background-position: center;
+}
+
+/* typography tweaks */
+.product-card .price {
+  font-weight: 600;
+  color: #111827;
+}
+.product-card .discount {
+  color: #dc2626; /* red-ish for discount */
+}
+
+/* spacing on smaller viewports */
+@media (max-width: 575.98px) {
+  .img-wrap {
+    height: 200px; /* taller for mobile if you prefer */
+  }
+}
 

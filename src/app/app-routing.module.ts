@@ -7,6 +7,8 @@ import { FaqComponent } from './faq/faq.component';
 import { AddtocartComponent } from './addtocart/addtocart.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { AddProductComponent } from './add-product/add-product.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 const routes: Routes = [
     {path:'about',component:AboutComponent},
@@ -16,6 +18,8 @@ const routes: Routes = [
     {path:'addtocart',component:AddtocartComponent},
     {path:'login',component:LoginComponent},
     {path:'register',component:RegisterComponent},
+    {path:'addproduct',component:AddProductComponent},
+    {path:'checkout',component:CheckoutComponent},
     {path:'',redirectTo:'home',pathMatch:'full'}
 ];
 

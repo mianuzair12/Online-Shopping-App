@@ -19,6 +19,9 @@ import { AddtocartComponent } from './addtocart/addtocart.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { FormsModule } from "@angular/forms";
+import { AddProductComponent } from './add-product/add-product.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CheckoutComponent } from './checkout/checkout.component';  // 👈 Yahan import zaroori hai
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,12 +38,15 @@ import { FormsModule } from "@angular/forms";
     FaqComponent,
     AddtocartComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AddProductComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     provideClientHydration(),

@@ -14,41 +14,37 @@
       </tr>
     </thead>
     <tbody class="text-center">
-      <tr>
-        <th scope="row">1</th>
-        <td><img src="/assets/images/home-img-1.png" alt="" width="50%" height="80px"></td>
-        <td>Inifnix Note 8</td>
-        <td>30,000</td>
-        <td>1</td>
-        <td>200</td>
-        <td>30,200</td>
-        <td><button class="btn btn-outline-info">Checkout</button></td>
-      </tr>
+    <!-- <tr *ngFor="let item of products; let i=index">
+  <th scope="row">{{i+1}}</th>
+  <td>
+    <img [src]="item.image" class="img-fluid" style="max-height: 80px;">
+  </td>
+  <td>{{ item.name }}</td>
+  <td>Rs {{ item.price }}</td>
+  <td>{{ item.quantity || 1 }}</td>
+  <td>200</td>
+  <td>{{ (item.price * (item.quantity || 1)) + 200 }}</td>
+  <td><button class="btn btn-outline-info" (click)="checkout()">Checkout</button></td>
+</tr> -->
 
-      <tr>
-        <th scope="row">2</th>
-        <td><img src="/assets/images/home-img-3.png" alt="" width="50%" height="80px"></td>
-        <td>WireLess Headphone</td>
-        <td>3000</td>
-        <td>1</td>
+ <tr *ngFor="let item of products; let i=index">
+        <th scope="row">{{ i+1 }}</th>
+        <td>
+          <img [src]="item.image" class="img-fluid" style="max-height: 80px;">
+        </td>
+        <td>{{ item.name }}</td>
+        <td>Rs {{ item.price }}</td>
+        <td>{{ item.quantity || 1 }}</td>
         <td>200</td>
-        <td>3,200</td>
-        <td><button class="btn btn-outline-info">Checkout</button></td>
+        <td>{{ (item.price * (item.quantity || 1)) + 200 }}</td>
+        <td>
+          <button class="btn btn-outline-info" (click)="checkout()">Checkout</button>
+        </td>
       </tr>
-
-       <tr>
-        <th scope="row">3</th>
-        <td><img src="/assets/images/home-img-2.png" alt="" width="50%" height="80px"></td>
-        <td>Rado watch</td>
-        <td>12000</td>
-        <td>1</td>
-        <td>200</td>
-        <td>12,200</td>
-        <td><button class="btn btn-outline-info">Checkout</button></td>
-      </tr>
+    
       <tr>
         <td></td>
-        <td><button class="btn btn-info" (click)="continueShopping()">Continue Shopping<i class="fa-sharp fa-solid fa-arrow-right-from-bracket ms-2 mt-2"></i></button></td>
+        <td><button class="btn btn-info" (click)="continueShopping()" >Continue Shopping<i class="fa-sharp fa-solid fa-arrow-right-from-bracket ms-2 mt-2"></i></button></td>
         <td></td><td></td><td></td><td></td><td></td>
         <td><button class="btn btn-info">Clear Shopping Cart</button></td>
       </tr>

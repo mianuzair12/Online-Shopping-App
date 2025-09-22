@@ -1,0 +1,14 @@
+<div class="container w-50 shadow">
+    <form class="p-3">
+        <h1><i>Cara Wallet</i></h1>
+        <!-- <span>{{ (item.price * (item.quantity || 1)) + 200 }}</span> -->
+        <label for="">Bank Account (jazzCash,EasyPesa)</label>
+        <input type="number" class="form-control mb-2" placeholder="Enter Account No" name="account">
+        <input type="number" class="form-control mb-2" placeholder="Enter Amount " name="amount">
+           <label for="">Cash on Delivery</label>
+        <input type="number" class="form-control mb-2" placeholder="Enter Amount " name="amount">
+        <div class="text-center">
+            <button class="btn btn-primary" (click)="show()">submit</button>
+        </div>
+    </form>
+</div>

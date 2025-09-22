@@ -1,0 +1,61 @@
+<!-- <div class="container mt-4">
+  <h2 class="text-center">Add New Product</h2>
+  <form (ngSubmit)="onSubmit()" #productForm="ngForm" class="shadow p-4 rounded">
+
+    <div class="mb-3">
+      <label class="form-label">Product Name</label>
+      <input type="text" class="form-control" [(ngModel)]="product.name" name="name" required />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Price</label>
+      <input type="number" class="form-control" [(ngModel)]="product.price" name="price" required />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Discount (%)</label>
+      <input type="number" class="form-control" [(ngModel)]="product.discount" name="discount" />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Image URL</label>
+      <input type="text" class="form-control" [(ngModel)]="product.image" name="image" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100">Add Product</button>
+  </form>
+</div> -->
+
+<div class="container mt-4">
+  <h2 class="text-center">Add New Product</h2>
+  <form (ngSubmit)="onSubmit()" #productForm="ngForm" class="shadow p-4 rounded">
+
+    <div class="mb-3">
+      <label class="form-label">Product Name</label>
+      <input type="text" class="form-control" [(ngModel)]="product.name" name="name" required />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Price</label>
+      <input type="number" class="form-control" [(ngModel)]="product.price" name="price" required />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Discount (%)</label>
+      <input type="number" class="form-control" [(ngModel)]="product.discount" name="discount" />
+    </div>
+
+    <!-- Image Upload -->
+    <div class="mb-3">
+      <label class="form-label">Select Image</label>
+      <input type="file" class="form-control" (change)="onFileSelected($event)" accept="image/*" />
+    </div>
+
+    <!-- Image Preview -->
+    <div class="mb-3 text-center" *ngIf="previewUrl">
+      <img [src]="previewUrl" alt="Preview" class="img-fluid rounded" style="max-height: 200px;">
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100">Add Product</button>
+  </form>
+</div>
