@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { ProductService } from "../services/product-service.service";
 
 @Component({
@@ -7,10 +7,26 @@ import { ProductService } from "../services/product-service.service";
   styleUrl: './checkout.component.css'
 })
 
-export class CheckoutComponent {
+export class CheckoutComponent implements OnInit {
   products: any[] = [];
+  count:number=1;
   constructor(private productService: ProductService) {}
-  
+  handleQty(val:string){
+if (val=='plus') {
+  this.count=this.count+1;
+}
+else {
+  this.count=this.count-1;
+}
+  }
+
+    ngOnInit() {
+    const selected = this.productService.getSelectedProduct(); // sirf selected product nikaalo
+    if (selected) {
+      this.products = [selected]; // ✅ array banake table me bind karo
+    }
+  }
+
   //  ngOnInit() {
   //   this.loadCart();
   // }

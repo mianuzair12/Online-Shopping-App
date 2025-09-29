@@ -33,10 +33,11 @@
           <img [src]="item.image" class="img-fluid" style="max-height: 80px;">
         </td>
         <td>{{ item.name }}</td>
-        <td>Rs {{ item.price }}</td>
-        <td>{{ item.quantity || 1 }}</td>
+        <td>Rs {{ item.price * count }}</td>
+        <td><button (click)="handleQty('minus')" class="me-3">-</button>{{count }} <button (click)="handleQty('plus')" class="ms-3">+</button></td>
         <td>200</td>
-        <td>{{ (item.price * (item.quantity || 1)) + 200 }}</td>
+        <!-- <td>{{ (item.price * (item.quantity || 1)) + 200 }}</td> -->
+        <td>{{ (item.price * (count)) + 200 }}</td>
         <td>
           <button class="btn btn-outline-info" (click)="checkout()">Checkout</button>
         </td>
@@ -46,7 +47,7 @@
         <td></td>
         <td><button class="btn btn-info" (click)="continueShopping()" >Continue Shopping<i class="fa-sharp fa-solid fa-arrow-right-from-bracket ms-2 mt-2"></i></button></td>
         <td></td><td></td><td></td><td></td><td></td>
-        <td><button class="btn btn-info">Clear Shopping Cart</button></td>
+        <td><button class="btn btn-info" (click)="clearShoppingCart()">Clear Shopping Cart</button></td>
       </tr>
     </tbody>
   </table>

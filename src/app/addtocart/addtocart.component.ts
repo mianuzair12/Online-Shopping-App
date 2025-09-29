@@ -9,8 +9,16 @@ import { Router } from "@angular/router";
 })
 export class AddtocartComponent implements OnInit {
   products: any[] = []; // ✅ yaha ek array rakhenge taake table *ngFor ke sath chale
-
+  count:number=1;
   constructor(private productService: ProductService, private router: Router) {}
+  handleQty(val:string){
+if (val=='plus') {
+  this.count=this.count+1;
+}
+else {
+  this.count=this.count-1;
+}
+  }
 
   ngOnInit() {
     const selected = this.productService.getSelectedProduct(); // sirf selected product nikaalo
@@ -26,4 +34,8 @@ export class AddtocartComponent implements OnInit {
   checkout() {
     this.router.navigate(['/checkout']);
   }
+clearShoppingCart(){
+  this.products=[];
+}
+
 }
