@@ -38,5 +38,6 @@ else {
   // }
 show(){
   alert('Thankyou for Shopping Experience!')
+  this.products=[];
 }
 }
